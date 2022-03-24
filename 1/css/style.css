@@ -1,0 +1,746 @@
+/*
+ * Login: xtikho00
+ *
+ * Doplnte sve reseni.
+ *
+ * Nezapomente pridat strucne hromadne komentare pro pravidla jednotlivych sekci
+ * a pro netrivialni useky kodu (napr. bubliny v sekci #refs)
+ */
+
+/* GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PT Sans';
+    line-height: 1.7;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+html {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a {
+    color: inherit;
+}
+
+::selection {
+    background-color: #eed269;
+}
+
+.content {
+    padding-left: 20px;
+    padding-right: 20px;
+    min-width: 768px;
+    max-width: 1200px;
+    width: auto;
+    margin: auto;
+    height: 100%; 
+}
+
+/* HEADER */
+
+#header {
+    min-height: 400px;
+    height: 100vh;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0.95);
+}
+
+#header > .content {
+    background: url("../img/header.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Logo */
+#logo {
+    font-size: 25px;
+    color: steelblue;
+    float: left;
+    width: 50%;
+}
+
+#logo i {
+    padding-right: 5px;
+}
+
+/* Contacts */
+#contacts {
+    color: #898989;
+    text-align: right;
+    padding-top: 15px;
+    float: left;
+    width: 50%;
+}
+
+#contacts i {
+    color: steelblue;
+    padding-right: 5px;
+}
+
+#contacts span {
+    padding-right: 5px;
+}
+
+/* Navigation list */
+#navigation {
+    float: right;
+    width: 70%;
+    padding-top: 15px;
+}
+
+#navigation > ul > li {
+    display: table-cell;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 13px;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.80);
+    border: 1px solid transparent;
+}
+
+#navigation > ul > li:hover {
+    border: 1px solid white;
+    border-radius: 0px;
+    color: white;
+}
+
+/* Networks */
+#networks {
+    float: right;
+    width: 30%;
+    text-align: right;
+    padding-top: 10px;
+}
+
+#networks i {
+    font-size: 32px;
+    padding-left: 10px;
+    color: steelblue;
+}
+
+#networks i:hover {
+    color: white;
+}
+
+#header a:hover {
+    color: white;
+}
+
+#header-title {
+    float: left;
+    position: absolute;
+    bottom: 33%;
+}
+
+/* Header */
+#header-title > h1 {
+    font-size: 64px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    color: white; 
+}
+
+/* Get started button */
+#get-started {
+    font-size: 24px;
+    color: #898989;
+    border: 2px solid #898989;
+    border-radius: 15px;
+    padding: 20px;
+    margin-left: 20px;
+    display: inline-block;
+}
+
+#get-started a {
+    transition: 0s;
+}
+
+#get-started:hover {
+    background-color: steelblue;
+    border: 2px solid steelblue;
+    color: white;
+}
+
+/* SERVICES */
+
+#services {
+    padding-top: 60px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 0;
+    padding-bottom: 60px;
+}
+
+/* Center everything */
+#services div {
+    width: auto;
+    margin: auto;
+}
+
+#services .content > p {
+    text-align: center;
+    font-size: 18px;
+    padding-top: 40px;
+    color: #898989;
+}
+
+/* Header */
+#services .content h2 {
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Create a grid with 2 columns */
+#services > .content > div {
+    padding-top: 40px;
+    width: 644px;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 40px;
+    row-gap: 40px;
+    display: grid;
+}
+
+.services-card {
+    width: 300px;
+    box-shadow: 0 4px 10px #898989;
+    border: 1px solid #ffffff;
+}
+
+.services-card:hover {
+    box-shadow: 0 4px 10px 0 steelblue;
+    border: 1px solid steelblue;
+}
+
+/* Card's image and it's on-hover behaviour */
+.services-card > div {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.services-card > div img {
+    height: 50px;
+    width: 50px;
+    padding: 5px;
+    border: 1px solid steelblue;
+}
+
+.services-card > div img:nth-of-type(1){
+    display: inline;
+}
+
+.services-card > div img:nth-of-type(2){
+    display: none;
+}
+
+.services-card:hover > div img:nth-of-type(1) {
+    display: none;
+}
+
+.services-card:hover > div img:nth-of-type(2) {
+    background-color: steelblue;
+    display: inline;
+}
+
+/* Card's title */
+.services-card > h3 {
+    font-size: 24px;
+    text-align: center;
+}
+
+/* Card's text */
+.services-card > p {
+    font-size: 14px;
+    text-align: center;
+    color: #bfbfbf; 
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* ABOUT */
+
+#about {
+    padding-top: 60px;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-radius: 0;
+    padding-bottom: 80px;
+}
+
+.about-item {
+    padding-top: 60px;
+}
+
+/* Text */
+.about-item p {
+    text-align: justify;
+    font-size: 18px;
+    color: #898989;
+}
+
+/* Header */
+.about-item h2 {
+    text-align: left;
+    font-size: 32px;
+    padding-top: 5px;
+    padding-bottom: 40px;
+}
+
+/* Image */
+.about-item img {
+    float: left;
+    margin-right: 80px;
+    margin-bottom: 40px;
+}
+
+.about-item img[alt="Apporach"] {
+    float: right;
+    margin-left: 80px;
+    margin-bottom: 40px;
+    margin-right: 0px;
+}
+
+#about img {
+    width: 40%;
+    height: 40%;
+}
+
+#about img:hover {
+    width: 50%;
+    width: 50%;
+}
+
+/* TEAM */
+
+#team {
+    padding-top: 60px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 0;
+    border-bottom: 1px dashed black;
+    padding-bottom: 80px;
+}
+
+/* Grid with 2 rows and 4 columns*/
+#team > .content {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 108px 1fr;
+    display: grid;
+    column-gap: 20px;
+}
+
+/* Header */
+#team > .content h2 {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Team card's template */
+.team-card {
+    width: 100%;
+    min-width: 200px;
+    max-width: 278px;
+    box-shadow: 0 4px 10px #898989;
+    transition: 0s;
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.team-card:hover {
+    box-shadow: 0 4px 10px 0 steelblue;
+    border: 1px solid steelblue;
+}
+
+/* Team card's image */
+.team-card img {
+    max-width: 100%;
+    max-height: 100%;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+/* Team card's header and it's on-hover behavior */
+.team-card > h3 {
+    font-size: 24px;
+    text-align: center;
+}
+
+.team-card:hover > h3 {
+    transition: 0s;
+    color: steelblue;
+}
+
+/* Team card's subheader */
+.team-card > h4 {
+    color: #898989;
+    text-align: center;
+}
+
+/* Team card's text */
+.team-card > p {
+    font-size: 14px;
+    text-align: center;
+    color: #bfbfbf; 
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* STATS */
+
+#stats {
+    padding-top: 60px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 0;
+    padding-bottom: 80px;
+}
+
+#stats > .content {
+    grid-template-columns: 1fr 1fr 1fr;
+    display: grid;
+    column-gap: 20px;
+}
+
+.stats-card {
+    background-color: #4d4d4d;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    min-width: 200px;
+    max-width: 300px;
+}
+
+.stats-card:hover {
+    background-color: steelblue;
+}
+
+.stats-card > i {
+    position:relative;
+    top: calc(0% - 22px);
+    left: calc(50% - 22px);
+    color: steelblue;
+    font-size: 32px;
+    background-color: white;
+    border: 7px solid white;
+    border-radius: 90px;   
+}
+
+.stats-card > h3 {
+    font-size: 24px;
+    color: white;
+    text-align: center;
+}
+
+.stats-card > p {
+    font-size: 14px;
+    text-align: center;
+    color: #bfbfbf;
+    padding-bottom: 15px;
+}
+
+/* PRICE */
+
+#price {
+    padding-top: 60px;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-radius: 0;
+    padding-bottom: 80px;    
+}
+
+#price > .content h2 {
+    font-size: 32px;
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+/* Table */
+#price table {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: separate;
+    border-spacing: 0 20px;
+    color: #898989;
+}
+
+/* Head cells */
+#price table thead tr th {
+    padding-left: 20px;
+    padding-bottom: 40px;
+    text-align: left;
+    color: black;
+}
+
+/* For list column */
+#price table tbody tr td:nth-of-type(2) {
+    padding-left: 40px;
+}
+
+/* Default cell */
+#price table tbody tr td {
+    border-top: 1px dotted steelblue;
+    border-bottom: 1px dotted steelblue;
+    border-radius: 0px;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* First list item */
+#price table tbody tr td ul li:first-of-type {
+    list-style: none;
+    margin-left: -20px;
+    font-weight: bold;
+}
+
+/* Button and it's on-hover behaviour */
+#price table tbody tr td button {
+    border: 1px solid steelblue;
+    padding: 20px;
+}
+
+#price table tbody tr td button:hover {
+    background-color: steelblue;
+    color: white;
+}
+
+/* REFS */
+
+#refs {
+    padding-top: 60px;
+    background-color: rgba(0, 0, 0, 0.00);
+    border-radius: 0;
+    padding-bottom: 80px;    
+    border-bottom: 1px dashed black;
+}
+
+#refs > .content {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 80px;
+    display: grid;
+}
+
+/* Reference card and its on-hover behaviour */
+.refs-card {
+    width: 100%;
+    max-width: 400px;
+    min-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.refs-card:hover > blockquote::before {
+    color: white;
+}
+
+.refs-card:hover > blockquote {
+    background-color: steelblue;
+}
+
+.refs-card:hover > blockquote::after {
+    border-top: 30px solid steelblue;
+}
+
+/* Image */
+.refs-card figure img {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+    border-radius: 90px;
+    float: left;
+}
+
+/* Name */
+.refs-card figure > h3 {
+    padding-top: 15px;
+    height: 60px;
+    color: #bfbfbf;
+}
+
+/* Quotation sign */
+.refs-card blockquote::before {
+    content: "“";
+    font-size: 50px;
+    color: steelblue;
+    padding-right: 7px;
+    float: left;
+    transition: 0.5s; /* Why it's not applied implicitly? idk */
+}
+
+/* Quoteblock */
+.refs-card blockquote {
+    position: relative;
+    background: #4d4d4d;
+    color: white;
+    max-width: 100%;
+    height: fit-content;
+    padding-left: 7px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-right: 7px;
+    margin-bottom: 35px;
+}
+
+/* Triangle */
+.refs-card blockquote::after {
+    content: "";
+    position: absolute;
+    border-top: 30px solid #4d4d4d;
+    border-right: 30px solid transparent;
+    width: 0px;
+    height: 0px;
+    bottom: -29px;
+    left: 60px;
+    transition: 0.5s; /* Why it's not applied implicitly? idk */
+}
+
+/* CONTACT */
+
+#contact {
+    padding-top: 60px;
+    background-color: rgba(0, 0, 0, 0.00);
+    padding-bottom: 80px;
+}
+
+/* Grid for entire section */
+#contact > .content {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 400px;
+    display: grid;
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+#contact > .content h2 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#contact > .content map {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+/* Grid for form */
+#contact > .content form {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    display: grid;
+    grid-template-rows: 50px 50px 1fr 50px;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 20px;
+    column-gap: 20px;
+}
+
+/* Input fields */
+#contact > .content form input {
+    padding: 10px;
+    border: 1px solid steelblue;
+    outline: none;
+}
+
+#contact > .content form input:focus {
+    border: 1px solid green;
+}
+
+#contact > .content form input:valid {
+    color: steelblue;
+}
+
+#contact > .content form input:invalid {
+    color: red;
+}
+
+#contact > .content form input:nth-of-type(3) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+/* Message */
+#contact > .content form textarea {
+    border: 1px solid steelblue;
+    padding: 10px;
+    outline: none;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+#contact > .content form textarea:focus {
+    border: 1px solid green;
+}
+
+#contact > .content form textarea:valid {
+    color: steelblue;
+}
+
+/* Button and it's on-hover behaviour */
+#contact > .content form input:nth-of-type(4) {
+    width: 300px;
+    background-color: steelblue;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+#contact > .content form input:nth-of-type(4):hover {
+    background-color: green;
+}
+
+/* FOOTER */
+
+#footer {
+    padding-top: 40px;
+    background-color: rgba(0, 0, 0, 1);
+    padding-bottom: 40px;
+    border-radius: 0;
+}
+
+#footer > .content {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#footer > .content:nth-child(1) {
+    color: #898989;
+}
+
+#footer a {
+    color: steelblue;
+}
