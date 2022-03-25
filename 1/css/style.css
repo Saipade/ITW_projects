@@ -24,6 +24,8 @@ html {
     scroll-behavior: smooth;
 }
 
+
+
 h3 {
     font-size: 18px;
 }
@@ -43,6 +45,8 @@ a {
 .content {
     padding-left: 20px;
     padding-right: 20px;
+    padding-top: 60px;
+    padding-bottom: 80px;
     min-width: 768px;
     max-width: 1200px;
     width: auto;
@@ -50,15 +54,15 @@ a {
     height: 100%; 
 }
 
+section {
+    border-radius: 0;
+}
+
 /* HEADER */
 
 #header {
     min-height: 400px;
     height: 100vh;
-    padding-top: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-radius: 0;
     background-color: rgba(0, 0, 0, 0.95);
 }
 
@@ -66,8 +70,14 @@ a {
     background: url("../img/header.jpg");
     background-repeat: no-repeat;
     background-position: center center;
-    padding-left: 0;
-    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#header-menu {
+    padding-top: 10px;
 }
 
 /* Logo */
@@ -76,6 +86,10 @@ a {
     color: steelblue;
     float: left;
     width: 50%;
+}
+
+#logo a {
+    font-family: 'Special Elite';
 }
 
 #logo i {
@@ -97,7 +111,7 @@ a {
 }
 
 #contacts span {
-    padding-right: 5px;
+    padding-right: 10px;
 }
 
 /* Navigation list */
@@ -122,7 +136,7 @@ a {
 
 #navigation > ul > li:hover {
     border: 1px solid white;
-    border-radius: 0px;
+    border-radius: 0;
     color: white;
 }
 
@@ -148,18 +162,19 @@ a {
     color: white;
 }
 
+/* Header */
 #header-title {
     float: left;
-    position: absolute;
-    bottom: 33%;
+    vertical-align: text-top;
 }
 
-/* Header */
 #header-title > h1 {
     font-size: 64px;
     padding-bottom: 20px;
     padding-left: 20px;
-    color: white; 
+    color: white;
+    position: absolute;
+    bottom: 33%;
 }
 
 /* Get started button */
@@ -170,7 +185,8 @@ a {
     border-radius: 15px;
     padding: 20px;
     margin-left: 20px;
-    display: inline-block;
+    position: absolute;
+    bottom: 20%;
 }
 
 #get-started a {
@@ -186,10 +202,7 @@ a {
 /* SERVICES */
 
 #services {
-    padding-top: 60px;
     background-color: rgba(0, 0, 0, 0);
-    border-radius: 0;
-    padding-bottom: 60px;
 }
 
 /* Center everything */
@@ -215,10 +228,9 @@ a {
 /* Create a grid with 2 columns */
 #services > .content > div {
     padding-top: 40px;
-    width: 644px;
+    max-width: 644px;
     grid-template-columns: 1fr 1fr;
-    column-gap: 40px;
-    row-gap: 40px;
+    gap: 40px;
     display: grid;
 }
 
@@ -283,15 +295,16 @@ a {
 /* ABOUT */
 
 #about {
-    padding-top: 60px;
     background-color: rgba(0, 0, 0, 0.03);
-    border-radius: 0;
-    padding-bottom: 80px;
+}
+
+.about-item:first-of-type {
+    padding-top: 0;
 }
 
 .about-item {
     padding-top: 60px;
-}
+} 
 
 /* Text */
 .about-item p {
@@ -308,46 +321,40 @@ a {
     padding-bottom: 40px;
 }
 
-/* Image */
-.about-item img {
+/* Image (odd and even cases) */
+.about-item:nth-of-type(odd) img {
     float: left;
     margin-right: 80px;
     margin-bottom: 40px;
 }
 
-.about-item img[alt="Apporach"] {
+.about-item:nth-of-type(even) img {
     float: right;
     margin-left: 80px;
     margin-bottom: 40px;
-    margin-right: 0px;
 }
 
-#about img {
+.about-item img {
     width: 40%;
-    height: 40%;
 }
 
-#about img:hover {
-    width: 50%;
+.about-item img:hover {
     width: 50%;
 }
 
 /* TEAM */
 
 #team {
-    padding-top: 60px;
     background-color: rgba(0, 0, 0, 0);
-    border-radius: 0;
     border-bottom: 1px dashed black;
-    padding-bottom: 80px;
 }
 
 /* Grid with 2 rows and 4 columns*/
 #team > .content {
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 108px 1fr;
+    grid-template-rows: 80px 1fr;
     display: grid;
-    column-gap: 20px;
+    gap: 20px;
 }
 
 /* Header */
@@ -380,8 +387,8 @@ a {
 .team-card img {
     max-width: 100%;
     max-height: 100%;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 /* Team card's header and it's on-hover behavior */
@@ -414,16 +421,14 @@ a {
 /* STATS */
 
 #stats {
-    padding-top: 60px;
     background-color: rgba(0, 0, 0, 0);
-    border-radius: 0;
-    padding-bottom: 80px;
 }
 
 #stats > .content {
     grid-template-columns: 1fr 1fr 1fr;
     display: grid;
     column-gap: 20px;
+    row-gap: 40px;
 }
 
 .stats-card {
@@ -466,10 +471,7 @@ a {
 /* PRICE */
 
 #price {
-    padding-top: 60px;
     background-color: rgba(0, 0, 0, 0.03);
-    border-radius: 0;
-    padding-bottom: 80px;    
 }
 
 #price > .content h2 {
@@ -505,7 +507,7 @@ a {
 #price table tbody tr td {
     border-top: 1px dotted steelblue;
     border-bottom: 1px dotted steelblue;
-    border-radius: 0px;
+    border-radius: 0;
     padding-left: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -532,17 +534,16 @@ a {
 /* REFS */
 
 #refs {
-    padding-top: 60px;
     background-color: rgba(0, 0, 0, 0.00);
-    border-radius: 0;
-    padding-bottom: 80px;    
     border-bottom: 1px dashed black;
 }
 
+/* Grid */
 #refs > .content {
+    display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 80px;
-    display: grid;
+    row-gap: 40px;
 }
 
 /* Reference card and its on-hover behaviour */
@@ -612,8 +613,6 @@ a {
     position: absolute;
     border-top: 30px solid #4d4d4d;
     border-right: 30px solid transparent;
-    width: 0px;
-    height: 0px;
     bottom: -29px;
     left: 60px;
     transition: 0.5s; /* Why it's not applied implicitly? idk */
@@ -622,9 +621,7 @@ a {
 /* CONTACT */
 
 #contact {
-    padding-top: 60px;
     background-color: rgba(0, 0, 0, 0.00);
-    padding-bottom: 80px;
 }
 
 /* Grid for entire section */
@@ -728,13 +725,13 @@ a {
     padding-top: 40px;
     background-color: rgba(0, 0, 0, 1);
     padding-bottom: 40px;
-    border-radius: 0;
 }
 
 #footer > .content {
     display: flex;
     justify-content: space-between;
-
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 #footer > .content:nth-child(1) {
