@@ -114,6 +114,28 @@ section {
     padding-right: 10px;
 }
 
+/* Networks */
+#networks {
+    float: right;
+    width: 30%;
+    text-align: right;
+    padding-top: 10px;
+}
+
+#networks i {
+    font-size: 32px;
+    padding-left: 10px;
+    color: steelblue;
+}
+
+#networks i:hover {
+    color: white;
+}
+
+#header a:hover {
+    color: white;
+}
+
 /* Navigation list */
 #navigation {
     float: right;
@@ -137,28 +159,6 @@ section {
 #navigation > ul > li:hover {
     border: 1px solid white;
     border-radius: 0;
-    color: white;
-}
-
-/* Networks */
-#networks {
-    float: right;
-    width: 30%;
-    text-align: right;
-    padding-top: 10px;
-}
-
-#networks i {
-    font-size: 32px;
-    padding-left: 10px;
-    color: steelblue;
-}
-
-#networks i:hover {
-    color: white;
-}
-
-#header a:hover {
     color: white;
 }
 
@@ -304,6 +304,7 @@ section {
 
 .about-item {
     padding-top: 60px;
+    min-height: 250px; /* no overlapping */
 } 
 
 /* Text */
@@ -585,11 +586,15 @@ section {
 
 /* Quotation sign */
 .refs-card blockquote::before {
-    content: "“";
-    font-size: 50px;
+    content: '"';
+    font-size: 80px;
+    font-style: italic;
+    font-weight: bold;
     color: steelblue;
     padding-right: 7px;
     float: left;
+    position: absolute;
+    top: -15px;
     transition: 0.5s; /* Why it's not applied implicitly? idk */
 }
 
@@ -605,6 +610,11 @@ section {
     padding-top: 20px;
     padding-right: 7px;
     margin-bottom: 35px;
+    position: relative;
+}
+
+.refs-card blockquote span {
+    padding-left: 40px;
 }
 
 /* Triangle */
@@ -614,7 +624,7 @@ section {
     border-top: 30px solid #4d4d4d;
     border-right: 30px solid transparent;
     bottom: -29px;
-    left: 60px;
+    left: 30px;
     transition: 0.5s; /* Why it's not applied implicitly? idk */
 }
 
